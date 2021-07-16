@@ -1,4 +1,3 @@
-from pprint import pprint
 
 import requests
 
@@ -27,6 +26,8 @@ def sphero_request_raw(name):
 char1 = 'Hulk'
 char2 = 'Captain America'
 char3 = 'Thanos'
+
+list_of_chars = ['Hulk','Captain America','Thanos']
 
 # if __name__ == '__main__':
     # sphero_request_raw(char1)
@@ -61,3 +62,9 @@ else:
 #
 # if __name__ == '__main__':
 #     sphero_request_id()
+
+def sort_compare():
+    for el in list_of_chars:
+        print(int(sphero_request_raw(el)))
+
+sort_compare()
