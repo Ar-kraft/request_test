@@ -64,7 +64,11 @@ else:
 #     sphero_request_id()
 
 def sort_compare():
+    list = []
     for el in list_of_chars:
-        print(int(sphero_request_raw(el)))
+        int(sphero_request_raw(el))
+    return el
+    list.append(el)
+    print(list)
 
 sort_compare()
