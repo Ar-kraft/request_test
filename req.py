@@ -1,8 +1,6 @@
 import requests
 
-
-
-token=" "
+token="WRITE YOUR TOKEN HERE"
 
 class YaUploader:
     file_path = None
@@ -27,6 +25,7 @@ class YaUploader:
     def upload(self):
         done_ref = self._get_upload_link(self.file_path).get("href", "")
         response = requests.put(done_ref, data=open(self.file_path, 'rb'))
+        #response = requests.put(done_ref, json ={'url':'https://sun9-48.userapi.com/impg/hZBImqkCXbzy3VGIhn30Jj4P3RWurerkaZZSnw/oDCgWwpSe34.jpg?size=776x1080&quality=96&sign=dfa7e2744b632bcb9f98207fcbcd7e2e&c_uniq_tag=-OIhBF6MeG1Enc-LtRLB6cSUcbp87ZWbwyKmvMApZEM&type=album'} )
         response.raise_for_status()
         if response.status_code == 201:
             print('Success')
@@ -34,6 +33,6 @@ class YaUploader:
 
 
 if __name__ == '__main__':
-    uploader = YaUploader('UPLOAD_2021.txt', token)
+    uploader = YaUploader('3.jpg', token)
     result = uploader.upload()
     print(result)
